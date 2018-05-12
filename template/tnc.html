@@ -1,0 +1,173 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+<button type="submit" class="btn btn-primary" onclick="my_fun();">Check</button>
+
+<script language="JavaScript">
+
+    function my_fun() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:5000/test",
+            data: false,
+            cache: false,
+            contentType: 'application/json;charset=UTF-8',
+            processData: false,
+            success: function (response) {
+                test(response);
+            },
+
+        });
+    }
+
+
+    function test(data) {
+        var year = data;
+        var val;
+        document.write("<select name='years'>");
+        for (var i=0; i <data['id'].length; i++)
+        {
+            document.write("<option>" + data['id'][i] + "</option>");
+        }
+    }
+</script>
+<div>
+    <form name="yearform"></form></div>
+<div>
+    <form>
+        <p>This Construction Contract is being entered into between [OWNER] (“Owner”) and [CONTRACTOR] (“Contractor”) (collectively, the “Parties”).  The effective date of this Construction Contract will be the last date of signature below.</p>
+        <p>This Construction Contract, along with incorporated documents referenced herein, sets forth the terms and conditions agreed to between the Parties relating to construction of [TYPE OF CONSTRUCTION] by Contractor for Owner.</p>
+        <h3 align="center">TERMS AND CONDITIONS</h3>
+
+        <h5><b>Article 1 – Parties and Property</b></h5>
+        <p>1.1.   Owner is [OWNER] is [OWNER TYPE], the legal owner of the property on which construction will be completed under this Construction Contract, with contact information as follows –
+            <br/> [OWNER ADDRESS LINE 1]
+            <br/>  [OWNER ADDRESS LINE 2]
+            <br/>  [OWNER CITY], [OWNER STATE], [OWNER ZIP]
+            <br/>  [OWNER PHONE]
+            <br/>  [OWNER EMAIL]
+        </p>
+        <p>1.2.   Contractor is [CONTRACTOR] is a duly licensed general contractor in good standing, License #[LICENSE NUMBER], with contact information as follows –
+            <br/>  [CONTRACTOR ADDRESS LINE 1]
+            <br/>  [CONTRACTOR ADDRESS LINE 2]
+            <br/> [CONTRACTOR CITY], [CONTRACTOR STATE], [CONTRACTOR ZIP]
+            <br/>  [CONTRACTOR PHONE]
+            <br/> [CONTRACTOR EMAIL]
+        </p>
+        <p>1.3.   The site for the construction to be completed under this Construction Contract is as follows –
+            <br/>  Street address –
+            <br/>   [SITE STREET ADDRESS 1]
+            <br/>   [SITE STREET ADDRESS 2]
+            <br/>  [SITE CITY], [SITE STATE]  [SITE ZIP]
+            <br/>  Legal description –
+            <br/>   [LEGAL DESCRIPTION]
+            <br/>(hereinafter “Property”).
+        </p>
+        <p>1.4.   Construction Project shall mean the work that Contractor (and/or Contractor’s agents) are obligated to perform for Owner as detailed within the following plans and specification documents which are incorporated herein by reference –
+            <br/>    [PLAN DOCUMENT(S)]
+            <br/>    [SPECIFICATION DOCUMENT(S)]
+        </p>
+
+        <h5><b>Article 2 – Compensation</b></h5>
+        <p>2.1.   In consideration for the work performed by Contractor on the Construction Project, Owner will pay to Contractor the total sum of $[TOTAL PROJECT COST], according to the milestones set forth below, and subject to modification on account of any change orders to the scope of work made by the Parties according to the terms of this Construction Contract.
+        </p>
+        <p>2.2.   Upon completion of the scope of work designated in the following milestones, partial payments will be made by Owner to Contractor within 10 days of notice of milestone completion submitted by Contractor to Owner, subject to any applicable dispute provisions in this Construction Contract –
+            <br/> 2.2.1.   Milestone 1.  Upon completion of the following scope of work, Contractor will be entitled to payment of [MILESTONE 1 PAYMENT]
+            <br/>[WORK SCOPE 1]
+            <br/> 2.2.2.   Milestone 2.  Upon completion of the following scope of work, Contractor will be entitled to payment of [MILESTONE 2 PAYMENT]
+            <br/> [WORK SCOPE 2]
+            <br/> 2.2.3.   Milestone 3.  Upon completion of the following scope of work, Contractor will be entitled to payment of [MILESTONE 3 PAYMENT]
+            <br/> [WORK SCOPE 3]
+            <br/>  2.2.4.   Milestone 4.  Upon completion of the following scope of work, Contractor will be entitled to payment of [MILESTONE 4 PAYMENT]
+            <br/>[WORK SCOPE 4]
+            <br/>  2.2.5.   Milestone 5.  Upon completion of the following scope of work, Contractor will be entitled to payment of [MILESTONE 5 PAYMENT]
+            <br/>[WORK SCOPE 5]
+        </p>
+        <p>2.3.   Contractor will have the right to stop work and keep the Construction Project idle if payments are not made to Contractor when due.  If the work is stopped for such reason for a period exceeding [STOP DAYS] days without payments being made, Owner shall be deemed to be in default and Contractor may, at its option, make a final demand for all payments due and owing, and any additional expeditures for work performed, materials ordered or supplied, or any other loss sustained.  If payment is not made within [LAST CHANCE TO PAY DAYS] days thereafter, Contractor will be entitled to all legal remedies for breach of this Construction Contract.
+        </p>
+
+        <h5><b>Article 3 – Contingencies, Commencement, and Completion</b></h5>
+        <p>3.1.   This Construction Contract [CHECKBOX] is [CHECKBOX] is not contingent on Owner obtaining a construction loan as follows:  [FINANCING CONDITIONS] on or before [CONTINGENCY DEADLINE].  Owner will provide notice to Contractor when the construction loan has been approved.  If this Construction Contract is contingent on Owner obtaining a construction loan and such loan is not obtained on or before the contingency deadline set forth herein, neither the Owner nor the Contractor shall have any further obligations under this Construction Contract.
+        </p>
+        <p>3.2.   Work on the Construction Project will commence no later than [DAYS] days after the Effective Date of this Construction Contract, or after Contractor receives notice from Owner of approval of any construction loan, whichever is later (“Commencement Date”).
+        </p>
+        <p>3.3.   The Construction Project is scheduled to be completed within [MONTHS] months of the Commencement Date, unless modified by change order as defined herein.
+        </p>
+
+        <h5><b>Article 4 – Change orders</b></h5>
+        <p>4.1.   From time to time during the performance of work under this Construction Contract, there may be changes required or requested to the scope of work, price, and time for completion, under this Construction Contract.  All such proposed changes will be submitted to the other Party in writing containing at least the following information:  proposal date, the change requested, explanation of how that will affect the cost or time of completion, and signed by the proposing party.  When both parties have signed to acknowledge their approval of such a proposal, it will be designated as a “Change Order” and will then be incorporated into this Construction Contract and is binding on both parties.
+        </p>
+
+        <h5><b>Article 5 – Additional provisions</b></h5>
+        <p>5.1.   Contractor will obtain, at its own cost, all necessary permits and permissions to perform the work required for the Construction Project.
+        </p>
+        <p>5.2.   Contractor will maintain, throughout the duration of this Construction Contract, all legally required licensure and permissions to perform the work required for the Construction Project.  To the extent it is permitted by law, Contractor may subcontract portions of work to properly qualified and licensed subcontractors upon advance notice to Owner, and ensuring that prompt and proper payment is made to such subcontractors as will avoid any liens being placed on the Property.
+        </p>
+        <p>5.3.   Owner will provide Contractor, and its employees, agents, and subcontractors, reasonable access to the Property for purposes of conducting work on the Construction Project.
+        </p>
+        <p>5.4.   During the course of work on the Construction Project, Owner or Owner’s designated agent, will have access to the Property for purposes of inspection, appraisal, and work evaluation.  Such access and inspections will be conducted at reasonable times, with advance notice to Contractor when reasonably practicable, and in a manner not to obstruct the progress of construction.
+        </p>
+        <p>5.5.   The Parties will purchase and maintain the following insurance polic(ies) during the course of work on the Construction Project with duly licensed insurance companies in the amount of no less than $[MIN INSURANCE AMOUNT] and with reasonable deductibles not to exceed [MIN DEDUCTIBLE AMOUNT] —
+            <br/>  [INSURANCE POLICY REQUIREMENT 1]
+            <br/>  [INSURANCE POLICY REQUIREMENT 2]
+        </p>
+        <p>5.6.   Contractor will be responsible to properly dispose of all construction materials and debris from the Property from the Commencement Date until the date a certificate of occupancy is issued to the Owner.
+        <p>5.7.   “Hazardous Materials” means any substance commonly referred to, or defined in any Law, as a hazardous material or hazardous substance (or other similar term), including but not be limited to, chemicals, solvents, petroleum products, flammable materials, explosives, asbestos, urea formaldehyde, PCB’s, chlorofluorocarbons, freon or radioactive materials.  Contractor will be responsible to comply with legal regulations regarding the removal and disposal of Hazardous Materials at its own cost unless otherwise specified in this Construction Contract.  Contractor will indemnify Owner for any damages resulting from improper handling or disposal of Hazardous Materials at or from the Property from the Commencement Date until the date a certificate of occupancy is issued to the Owner.</p>
+        <p>5.8.   Utility services to the Property during the time of construction will be arranged for, and paid by, [UTILITY RESPONSIBLE PARTY].</p>
+        <p>5.9.   In the even of destruction of the Property, in whole or in part, from the Commencement Date until the date a certificate of occupancy is issued to the Owner, either party will have the right to terminate this Construction Contract.</p>
+        <p>5.10. Contractor will not be deemed in breach of this Construction Contract or have liability to Owner for failure to perform obligations under this Construction Contract if the failure is due in whole or in substantial part to strikes, acts of God, unavailability of specified labor or materials, war, acts of terror, or other causes beyond the reasonable control of Contractor.
+        </p>
+        <p>5.11.    Additional Provisions.
+            <br/>[ADDITIONAL PROVISIONS]
+        </p>
+
+        <h5><b>Article 6 – Substantial Completion and Punch List</b></h5>
+        <p>6.1.   Contractor will provide notice to Owner when the Construction Project is substantially complete.  Owner will inspect the Construction Project within [DAYS TO INSPECT] after receiving such notice and deliver to Contractor a “punch list” of deficiencies found on the Construction Project.  Contractor will promptly correct the matters identified on the punch list.  The Owner may withhold from final payment to the Contractor a reasonable estimate of the cost to correct the punch list items, until such items are corrected.
+        </p>
+
+        <h5><b>Article 7 – Warranties</b></h5>
+        7.1.Contractor warrants and represents that it is duly licensed to perform the work under this Construction Agreement, and will perform such work in a workmanlike manner, in compliance with all applicable laws, regulations, codes, restrictive covenants, and homeowners’ association requirements, with new materials meeting the standards set for in the Construction Contract, including plans and specifications incorporated therein.
+        <br/>
+        7.2.Owner represents that he/she/it is the legal owner of the Property or otherwise has full legal authority to enter into this Construction Contract without approvals from any other person or entity, that the requested work as outlined in the plans and specifications are in compliance with all applicable laws, regulations, codes, restrictive covenants, and homeowners’ association requirements, and that Owner has the financial ability to pay the compensation to the Contractor, and any reasonable adjustments thereto via change orders, when due and that Owner will make such payments.
+        <br/>
+        7.3.Both Parties will execute and deliver to the other or to third parties any and all documents necessary to effectuate the provisions of this Construction Contract, including construction permits, certificate of occupancy, and any other documents.
+        <br/>
+
+        <h5><b>Article 8 – General terms</b></h5>
+        8.1. This Construction Contract may not be assigned by either Party without written consent of the other Party and such consent is not to be unreasonably withheld.
+        <br/>
+        8.2.   Any notice required or permitted under the terms of this Construction Contract shall be provided to the contact information set forth in Article 1, above.
+        <br/>
+        8.3.If any provision of this Construction Contract is found to be invalid, illegal, or unenforceable, the remaining portions shall remain in full force and effect.
+        <br/>
+        8.4.This Construction Contract is governed and is to be interpreted under the laws of the State of [PROPERTY STATE], and any legal proceedings relating to this Construction Contract will be maintained only in the County of [PROPERTY COUNTY] in the State of [PROPERTY STATE].
+        <br/>
+        8.5.This Construction Contract will be binding upon and inure to the benefit of the Parties and, if applicable, to their trustee, successor, executor or administrator, or heirs.
+        <br/>
+        8.6.In the event of conflict between the documents incorporated into this Construction Contract, the specifications will take precedence over the plans, and the plans will take precedence over this document.
+        <br/>
+        8.7.This Construction Contract, and the documents incorporated herein at Section 1.4, and any change orders created per the process outlined in Section 4.1, represent the entire agreement between the Parties and can only be modified in writing signed and dated by both Parties.
+        <br/>
+        <br/>
+        <br/>
+        Executed by the Parties on the date indicated below.
+
+        [OWNER SIGN DATE]_______________________________[OWNER]
+
+        [CONTRACTOR SIGN DATE]_______________________________[CONTRACTOR]
+    </form>
+</div>
+
+<!--scripts-->
+<script src="../static/js/tnc.js"></script>
+<script src="../static/js/tncbs.js"></script>
+
+</body>
+</html>

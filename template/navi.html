@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BluePrint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/navi.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+</head>
+<body>
+<!--header navigation-->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <a href="#" class="navbar-brand">bluePrint</a>
+    <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse"></button>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/navi">HOME</a></li>
+                <li><a href="/feedback">CONTACT US</a></li>
+                <li>
+                    <form class="row" style="padding-top: 6px;padding-right: 6px;padding-left: 6px;">
+                        <div class="col-sm-10" style="padding: 0px;">
+                            <input  class="form-control" type="text"  placeholder="Search" name="search">
+                        </div>
+                        <div class="col-sm-2" style="padding: 0px;">
+                            <button  class="btn btn-default form-control" type="submit">
+                                <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{email}}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/navi">Home</a></li>
+                        <li><a href="/profile">Profile settings</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--header navigation -->
+
+<div class="table container-fluid text-center">
+    <div class="row content col-sm-9">
+        <div class="row">
+            <div class="col-sm-3">
+                <span><img src="../static/img/adduser.png" width="40%"></span>
+                <h1><a href="/signup" class="btn btn-info btn-md submit-button" role="button" >Add Users</a></h1>
+            </div>
+            <div class="col-sm-3">
+                <span><img src="../static/img/ongoing.png" width="40%"></span>
+                <h1><a href="/ongoing" class="btn btn-info btn-md submit-button" role="button" >Ongoing Projects</a></h1>
+            </div>
+            <div class="col-sm-3">
+                <span><img src="../static/img/note.png" width="40%"></span>
+                <h1><a href="/notes" class="btn btn-info btn-md submit-button" role="button" >Notes</a></h1>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-3">
+                <span><img src="../static/img/viewusers.png" width="40%"></span>
+                <h1><a href="/table" class="btn btn-info btn-md submit-button" role="button" >View Company Users</a></h1>
+            </div>
+            <div class="col-sm-3">
+                <span><img src="../static/img/create.png" width="40%"></span>
+                <h1><a href="/create" class="btn btn-info btn-md submit-button" role="button" >Create Projects</a></h1>
+            </div>
+            <div class="col-sm-3">
+                <span><img src="../static/img/packagedetails.png" width="40%"></span>
+                <h1><a href="/packageDetail" class="btn btn-info btn-md submit-button" role="button" >Company Package Details</a></h1>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-3">
+                <span><img src="../static/img/Overview.png" width="40%"></span>
+                <h4><a href="/overview" class="btn btn-info btn-md submit-button active" role="button" >Overview</a></h4>
+            </div>
+            <div class="col-sm-3">
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-3" style="margin-top: 140px;"><h1>online users</h1></div>
+    <div class="col-sm-3" style="margin-top: 140px;"><h1>Calender</h1></div>
+
+</div>
+
+<!-- footer navigation bar-->
+<footer class="site-footer">
+    <div class="container">
+        <p> bluePrint  © 2017 </p>
+    </div>
+</footer>
+<!-- footer navigation bar-->
+
+<!-- scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

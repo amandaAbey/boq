@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/Google-Style-Login.css">
+</head>
+
+<body>
+    <div class="login-card"><img src="../static/img/download.png" class="profile-img-card">
+        <p class="profile-name-card"> </p>
+        <form class="form-signin" method="POST" action="/login_user">
+            {% if error %}<p style="color: red"><strong>{{ error }}</strong></p>{% endif %}
+            <input class="form-control" name="email" type="email" required="" placeholder="Email address" autofocus="" id="inputEmail">
+            <input class="form-control" name="password" type="password" required="" placeholder="Password" id="inputPassword">
+           <!--  <div class="checkbox">
+               <div class="checkbox">
+                    <label>
+                        <input type="checkbox">Remember me</label>
+                </div>
+            </div>-->
+			<div align="center">
+				<button class="btn btn-info btn-sm" type="submit" href="/login" >LOGIN</button>
+                <button class="btn btn-info btn-sm" type="submit" href="/cancel" >CANCEL</button>
+
+			</div>
+        </form><a href="/signup" class="forgot-password">do not have an account?</a></div>
+		<div></div>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>          
+</html>

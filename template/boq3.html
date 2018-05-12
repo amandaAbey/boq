@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BoQ for Electrical works</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/navi.css">
+</head>
+<body>
+<!--header navigation-->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <a href="#" class="navbar-brand">bluePrint</a>
+    <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse"></button>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/navi">HOME</a></li>
+                <li><a href="/feedback">CONTACT US</a></li>
+                <li>
+                    <form class="row" style="padding-top: 6px;padding-right: 6px;padding-left: 6px;">
+                        <div class="col-sm-10" style="padding: 0px;">
+                            <input  class="form-control" type="text"  placeholder="Search" name="search">
+                        </div>
+                        <div class="col-sm-2" style="padding: 0px;">
+                            <button  class="btn btn-default form-control" type="submit">
+                                <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Abeywardana ADAR
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/navi">Home</a></li>
+                        <li><a href="#">Profile settings</a></li>
+                        <li><a href="/login">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--header navigation -->
+
+<div class="container" style="width: 100%;">
+    <h1 style="margin-top: 100px;">3.0 BoQ for Electrical works</h1>
+    <p>The Tenderers are requested to refer the General notes, Drawings and study the taxes, safety procedures, site conditions before the pricing.
+        The Tenderer shall provide all dimensions, and technical information, of all builders work to the Engineer/Consultant in accordance with
+        the programme of work.
+    </p>
+    <div class="container">
+        <table class="table table-bordered" id="myTable" style="text-align:left;">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Description</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Rate LKR</th>
+                <th>Amount LKR</th>
+            </tr>
+            </thead>
+            <tbody style=text-align:left;>
+            {%  for record in values %}
+                <tr class="odd gradeX" onclick="javascript:showRow(this);">
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>
+                        <div class="select-wrapper">
+                            <select type= "text" name="category" id="category" method="POST" action="/drop_down">
+                                <option selected>None</option>
+                                {% for x in units %}
+                                    <option value="{{ x[0] }}">{{ x[0] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </td>
+
+                    <td>{{ record[3] }}</td>
+                    <td>{{ record[4] }}</td>
+                    <td>{{ record[5] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td><b>TOTAL SUM OF ELECTRICAL WORKS</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <!--        <p>Click the buttons to create and delete row(s) for the table.</p>
+                <button onclick="myCreateFunction()">Insert new row</button>
+                <button onclick="myDeleteFunction()">Delete row</button>
+            </div>
+        </div>
+        <script>
+            function myCreateFunction() {
+                var table = document.getElementById("myTable");
+                var row = table.insertRow(4);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "NEW CELL1";
+                cell2.innerHTML = "NEW CELL2";
+                cell3.innerHTML = "NEW CELL3";
+            }
+
+            function myDeleteFunction() {
+                document.getElementById("myTable").deleteRow(4);
+            }
+        </script>
+           -->
+    </div>
+</div>
+<div>
+    <p>NOTES :
+    <ol><li>Following items should be supplied by the Client</li>
+        <ul><li>Telephone System</li>
+            <li> CCTV System (Lump sum by provider)</li>
+            <li>TV System</li>
+            <li>Lighting fixtures</li>
+            <li> Ceiling fans/Exhust fans</li>
+            <li>Air conditioners</li>
+        </ul>
+        <li>Following were not quoted : </li>
+        <ul><li>Supply and installtion of a Generator</li>
+            <li>Cost of obtaining power supply from CEB</li>
+        </ul>
+    </ol>
+    </p>
+</div>
+
+<div class="form-group" style="padding-bottom:20px">
+    <div class="col-sm-offset-3 col-sm-10">
+        <a href="/boq4" class="btn btn-info" role="button">Create BoQ for Plumbing</a>
+        <a href="/create" class="btn btn-info" role="button">Cancel and Back to the Top</a>
+        <a href="/create" class="btn btn-info" role="button">Edit</a>
+        <a href="/create" class="btn btn-info" role="button">Generate PDF</a>
+    </div>
+</div>
+
+<!-- footer navigation bar-->
+
+<footer class="site-footer">
+    <div class="container">
+        <p> bluePrint  © 2017 </p>
+    </div>
+</footer>
+<!-- footer navigation bar-->
+<script>
+    function myFunction() {
+        var table=document.getElementById("myTable");
+        var total = 0;
+        for (var i=1;i<table.rows.length;i++){
+            var myResult = 0;
+            if(parseInt(table.rows[i].cells[3].firstChild.value ) > 0 && parseInt(table.rows[i].cells[4].firstChild.value)> 0) {
+                myResult = parseInt(table.rows[i].cells[3].firstChild.value) * parseInt(table.rows[i].cells[4].firstChild.value); // Parse the strings
+                table.rows[i].cells[5].innerHTML = myResult;
+                total += myResult;
+            }
+            table.rows[11].cells[5].innerHTML = total;
+        }
+    }
+</script>
+<!-- Scripts -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery.scrollex.min.js"></script>
+<script src="../static/js/skel.min.js"></script>
+<script src="../static/js/util.js"></script>
+<script src="../static/js/main.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

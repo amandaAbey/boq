@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>main</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/user.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+</head>
+
+<body>
+<div class="jumbotron hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6"></div>
+            <div class="col-md-6 col-md-pull-0 get-it">
+                <h1>bluePrint </h1>
+                <p style="color:#ffffff"><b>AutoCAD based construction material planning and Tracking system</b></p>
+                <p>
+                    <a class="btn btn-primary btn-block btn-lg" role="button" href="/signup">SIGN IN</a>
+                    <a class="btn btn-success btn-block btn-lg" role="button" href="/login">LOG IN</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section class="testimonials"></section>
+<section class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>We provide you</h2>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="thumbnail borderThumb"><span><img src="../static/img/gold1.png" class="img-responsive" alt="website template image"></span>
+                            <div class="caption">
+                                <h3>GOLD PACKAGE</h3>
+                                <p>Validation : 2 years </br>
+                                    Number of Projects : 75  </br>
+                                    <b><h1 align="center">Price : $ 31.73</h1></b> </br> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="thumbnail borderThumb"><span><img src="../static/img/silver1.png" class="img-responsive" alt="website template image"></span>
+                            <div class="caption">
+                                <h3>SILVER PACKAGE</h3>
+                                <p>Validation : 1 year </br>
+                                    Number of Projects : 30  </br>
+                                    <b><h1 align="center">Price : $ 15.86</h1></b> </br> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="thumbnail borderThumb"><span><img src="../static/img/bronze1.png" class="img-responsive" alt="website template image"></span>
+                            <div class="caption">
+                                <h3>BRONZE PACKAGE</h3>
+                                <p>Validation : 6 months </br>
+                                    Number of Projects : 15  </br>
+                                    <b><h1>Price : $ 6.35</h1></b> </br> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    <div class="col-sm-3">
+        <img src="../static/img/cons1.jpg" alt="Image1" width="100%">
+    </div>
+    <div class="col-sm-3">
+        <img src="../static/img/cons2.jpg" alt="Image2" width="100%" >
+    </div>
+    <div class="col-sm-3">
+        <img src="../static/img/cons5.jpg" alt="Image3" width="100%" >
+    </div>
+    <div class="col-sm-3">
+        <img src="../static/img/cons4.png" alt="Image4" width="100%" >
+    </div>
+</div>
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:500px;width:100%;"></div>
+<script>
+    function myMap() {
+        var myCenter = new google.maps.LatLng(6.7969,79.9018);
+        var mapProp = {center:myCenter, zoom:15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJbtfrBGwhP-yaI8TX5hpxzLbFAfbSuFM&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0">
+                <footer>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 footer-navigation">
+                            <h3><a href="#">blue<span>Print </span></a></h3>
+                            <!-- <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p> -->
+                            <p class="company-name">AmandaAbeywardana © 2017 </p>
+                        </div>
+                        <div class="col-md-4 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p>70/10 P.B.Alwis Perera mw,<br/>Katubedda, Moratuwa</p>
+                            </div>
+                            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                                <p class="footer-center-info email text-left"> +94 77 459 8421</p>
+                            </div>
+                            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                                <p> <a href="#" target="_blank">amaabewardana@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-4 footer-about">
+                            <h4>About the company</h4>
+                            <p>BIT Ext. Degree University of Moratuwa <br>Final year project <br> E141041002
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/mainslideshow.js"></script>
+</body>
+
+</html>

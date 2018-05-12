@@ -1,0 +1,139 @@
+<HTML>
+<head>
+    <title>payments</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/navi.css">
+</head>
+
+<body>
+<!--header navigation-->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <a href="#" class="navbar-brand">bluePrint</a>
+    <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse"></button>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/navi">HOME</a></li>
+                <li><a href="/feedback">CONTACT US</a></li>
+                <li>
+                    <form class="row" style="padding-top: 6px;padding-right: 6px;padding-left: 6px;">
+                        <div class="col-sm-10" style="padding: 0px;">
+                            <input  class="form-control" type="text"  placeholder="Search" name="search">
+                        </div>
+                        <div class="col-sm-2" style="padding: 0px;">
+                            <button  class="btn btn-default form-control" type="submit">
+                                <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Abeywardana ADAR
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/navi">Home</a></li>
+                        <li><a href="#">Profile settings</a></li>
+                        <li><a href="/login">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--header navigation -->
+<div class="container">
+    <div class="row-fluid">
+        <form class="form-horizontal"  method="post" action="/payment">
+            <fieldset>
+                <div id="legend">
+                    <legend class="container" align="center">Payment</legend>
+                </div>
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label class="control-label col-sm-2"  for="username">Card Holder's Name</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="username" class="form-control" name="username" placeholder="">
+                    </div>
+                </div>
+
+                <!-- Card Number -->
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="crdno">Card Number</label>
+                    <div class="col-sm-5">
+                        <input type="text" id="email" name="email" placeholder="" class="form-control">
+                    </div>
+                </div>
+
+                <!-- Expiry-->
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="expd">Card Expiry Date</label>
+                    <div class="col-sm-5">
+                        <select class="span3" name="expiry_month" id="expiry_month">
+                            <option></option>
+                            <option value="01">Jan (01)</option>
+                            <option value="02">Feb (02)</option>
+                            <option value="03">Mar (03)</option>
+                            <option value="04">Apr (04)</option>
+                            <option value="05">May (05)</option>
+                            <option value="06">June (06)</option>
+                            <option value="07">July (07)</option>
+                            <option value="08">Aug (08)</option>
+                            <option value="09">Sep (09)</option>
+                            <option value="10">Oct (10)</option>
+                            <option value="11">Nov (11)</option>
+                            <option value="12">Dec (12)</option>
+                        </select>
+
+                        <select class="span2" name="expiry_year">
+                            <option value="17">2017</option>
+                            <option value="18">2018</option>
+                            <option value="19">2019</option>
+                            <option value="20">2020</option>
+                            <option value="21">2021</option>
+                            <option value="22">2022</option>
+                            <option value="23">2023</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- CVV -->
+                <div class="form-group">
+                    <label class="control-label col-sm-2"  for="password_confirm">Card CVV</label>
+                    <div class="col-sm-5">
+                        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="span2">
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-5">
+                        <a href="/signup" class="btn btn-info" role="button">Submit</a>
+                        <a href="/payment" class="btn btn-info" role="button">Reset</a>
+                        <a href="/signup" class="btn btn-info" role="button">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!-- footer navigation bar-->
+
+<footer class="site-footer">
+    <div class="container">
+        <p> bluePrint  © 2017 </p>
+    </div>
+</footer>
+<!-- footer navigation bar-->
+</body>
+</html>
