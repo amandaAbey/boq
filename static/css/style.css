@@ -1,0 +1,9 @@
+body{
+  background:url(../../static/img/login.jpg) no-repeat center;
+  border:none;
+  background-size:cover;
+  margin:0;
+  height:100%;
+  width:100%;
+}
+

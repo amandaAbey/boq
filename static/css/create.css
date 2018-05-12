@@ -1,0 +1,18 @@
+body{
+  background:url(../../static/img/cons6.jpg) no-repeat center;
+  border:none;
+  background-size:cover;
+  margin:0;
+  height:100%;
+  width:100%;
+}
+.form-horizontal{
+    padding:25px;
+    box-sizing:border-box;
+    background-color:#000000bf;
+    box-shadow:0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    font:bold 14px sans-serif;
+    text-align:center;
+    margin:100px;
+    color:#fffefe;
+}
